@@ -1,0 +1,55 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="search-hero">
+            <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off"
+                placeholder="&#61442;  Search using name or abilities">
+        </div>
+    </div>
+    <div class="row">
+        <div class=" col-md-12 col-sm-12 col-xs-12 no-padding">
+            <div class="card">
+                <div class="card-header">
+                    <div class="col-lg-2">
+
+                    </div>
+                    <div class="col-lg-10">
+                        <div class="row">
+                            <paging-controls [isItemsPerPage]="true"></paging-controls>
+                            <paging-controls [isItemsPerPage]="false" (pageChange)="p = $event" responsive="true"
+                                previousLabel="Previous" nextLabel="Next"></paging-controls>
+                            <div class="col-lg-3 col-md-3 col-sm-12 cardSection"
+                                (click)="redirectPokemonDetails(pokemonArray.id)"
+                                *ngFor="let pokemonArray of pokemonArray | filter:searchText | paginate: { itemsPerPage:10, currentPage: p  }">
+
+                                <div class="cardSubSection">
+                                    <img class="imgSize" src={{pokemonArray.sprites.back_default}}>
+                                </div>
+                                <ul class="bullet">
+                                    <li>{{pokemonArray.name}}</li>
+                                    <li>{{pokemonArray.height}}</li>
+                                    <li>
+                                        {{pokemonArray.weight}}
+                                    </li>
+                                    <li *ngFor="let pokemonArrayAbilities of pokemonArray.abilities ">
+                                        {{pokemonArrayAbilities.ability.name}}
+                                    </li>
+                                </ul>
+
+                            </div>
+
+
+
+                        </div>
+                        <paging-controls [isItemsPerPage]="false" (pageChange)="p = $event" responsive="true"
+                                previousLabel="Previous" nextLabel="Next"></paging-controls>
+
+                    </div>
+
+                    <div class="col-lg-2">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

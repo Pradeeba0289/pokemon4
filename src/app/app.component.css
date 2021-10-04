@@ -1,0 +1,38 @@
+.container-fluid{
+    max-width: 100%;
+    height: auto;
+}
+.cardSection {
+    width: 25%;
+    border: aliceblue solid 2px;
+    margin: 10px;
+    border-radius: 7px;
+    padding: 0px;
+}
+.cardSubSection {
+    background-color: #d3d3d324;
+    padding: 0px;
+}
+.imgSize {
+    width:30%;
+    height: 30%;
+}
+h3 {
+    line-height: 1.2em
+}
+ul.bullet {
+    list-style-type: circle;
+}
+.search-hero {
+    max-width: 500px;
+    padding-bottom: 50px;
+    margin:auto;
+  }
+  
+  .form-control {
+    box-shadow: 0 10px 40px 0 #B0C1D9;
+  }
+  .form-control::placeholder  {
+    font-family: FontAwesome;
+  }
+    
